@@ -245,6 +245,9 @@ public class Table {
                             if(humanMovedPiece == null) {
                                 sourceTile = null;
                             }
+                            for(Move move : pieceLegalMoves(chessBoard)){
+                                System.out.println(move.getDestinationCoordinate());
+                            }
                         } else {
                             //second click
                             destinationTile = chessBoard.getTile(tileId);
@@ -254,6 +257,7 @@ public class Table {
                             } else {
                                 final Move move = Move.MoveFactory.createMove(chessBoard, sourceTile.getTileCoordinate(), destinationTile.getTileCoordinate());
                                 final MoveTransition transition = chessBoard.currentPlayer().makeMove(move);
+                                System.out.println(transition.getMoveStatus());
                                 if (transition.getMoveStatus().isDone()) {
                                     chessBoard = transition.getTransitionBoard();
                                     moveLog.addMove(move);
