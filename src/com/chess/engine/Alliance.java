@@ -1,11 +1,9 @@
 package com.chess.engine;
 
+import com.chess.engine.board.BoardUtils;
 import com.chess.engine.player.BlackPlayer;
 import com.chess.engine.player.Player;
 import com.chess.engine.player.WhitePlayer;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public enum Alliance {
     WHITE{
@@ -26,11 +24,7 @@ public enum Alliance {
 
         @Override
         public boolean isPawnPromotionSquare(int position) {
-            final List<Integer> promotionSquares = new ArrayList<>();
-            for(int i = 0; i<8; i++) {
-                promotionSquares.add(i);
-            }
-            return promotionSquares.contains(position);
+            return BoardUtils.FIRST_RANK[position];
         }
 
         @Override
@@ -61,11 +55,7 @@ public enum Alliance {
 
         @Override
         public boolean isPawnPromotionSquare(int position) {
-            final List<Integer> promotionSquares = new ArrayList<>();
-            for(int i = 56; i<64; i++) {
-                promotionSquares.add(i);
-            }
-            return promotionSquares.contains(position);
+            return BoardUtils.EIGHTH_RANK[position];
         }
 
         @Override
