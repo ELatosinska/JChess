@@ -1,8 +1,8 @@
-package com.chess.engine.player.ai;
+package com.chess.engine.classic.player.ai;
 
-import com.chess.engine.board.Board;
-import com.chess.engine.board.Move;
-import com.chess.engine.player.MoveTransition;
+import com.chess.engine.classic.board.Board;
+import com.chess.engine.classic.board.Move;
+import com.chess.engine.classic.player.MoveTransition;
 
 public class MiniMax implements MoveStrategy {
 

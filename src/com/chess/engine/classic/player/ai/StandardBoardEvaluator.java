@@ -1,8 +1,8 @@
-package com.chess.engine.player.ai;
+package com.chess.engine.classic.player.ai;
 
-import com.chess.engine.board.Board;
-import com.chess.engine.pieces.Piece;
-import com.chess.engine.player.Player;
+import com.chess.engine.classic.board.Board;
+import com.chess.engine.classic.pieces.Piece;
+import com.chess.engine.classic.player.Player;
 
 public class StandardBoardEvaluator implements BoardEvaluator {
     private static final int CHECK_BONUS = 50;

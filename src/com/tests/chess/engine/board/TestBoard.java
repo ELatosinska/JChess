@@ -1,11 +1,11 @@
 package com.tests.chess.engine.board;
 
-import com.chess.engine.board.Board;
-import com.chess.engine.board.BoardUtils;
-import com.chess.engine.board.Move;
-import com.chess.engine.player.MoveTransition;
-import com.chess.engine.player.ai.MiniMax;
-import com.chess.engine.player.ai.MoveStrategy;
+import com.chess.engine.classic.board.Board;
+import com.chess.engine.classic.board.BoardUtils;
+import com.chess.engine.classic.board.Move;
+import com.chess.engine.classic.player.MoveTransition;
+import com.chess.engine.classic.player.ai.MiniMax;
+import com.chess.engine.classic.player.ai.MoveStrategy;
 import com.google.common.collect.Iterables;
 import org.junit.Test;
 
@@ -48,6 +48,14 @@ public class TestBoard {
 //        assertFalse(BoardUtils.isThreatenedBoardImmediate(board));
 //        assertEquals(StandardBoardEvaluator.get().evaluate(board, 0), 0);
 //        assertEquals(board.getPiece(35), null);
+    }
+
+    @Test
+    public void testAi() {
+        final Board board = Board.createStandardBoard();
+        final MoveStrategy strategy = new MiniMax(4);
+        final Move move = strategy.execute(board);
+        System.out.println(move);
     }
 
     @Test
