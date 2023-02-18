@@ -6,6 +6,6 @@ import com.chess.gui.Table;
 public class JChess {
     public static void main(String[] args) {
         Board board = Board.createStandardBoard();
-        Table table = Table.get();
+        Table.get().show();
     }
 }
